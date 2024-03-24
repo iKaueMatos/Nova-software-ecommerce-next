@@ -1,31 +1,30 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ProductStoreType } from 'types';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ProductStoreType } from "types";
 
 interface CartTypes {
-  cartItems: ProductStoreType[]
+  cartItems: ProductStoreType[];
 }
 
-const initialState = { 
-  cartItems: [] 
+const initialState = {
+  cartItems: [],
 } as CartTypes;
 
 const indexSameProduct = (state: CartTypes, action: ProductStoreType) => {
-  const sameProduct = (product: ProductStoreType) => (
-    product.id === action.id && 
-    product.color === action.color && 
-    product.size === action.size
-  );
+  const sameProduct = (product: ProductStoreType) =>
+    product.id === action.id &&
+    product.color === action.color &&
+    product.size === action.size;
 
-  return state.cartItems.findIndex(sameProduct)
+  return state.cartItems.findIndex(sameProduct);
 };
 
 type AddProductType = {
-  product: ProductStoreType,
-  count: number,
-}
+  product: ProductStoreType;
+  count: number;
+};
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     addProduct: (state, action: PayloadAction<AddProductType>) => {
@@ -34,14 +33,14 @@ const cartSlice = createSlice({
       // find index of product
       const index = indexSameProduct(state, action.payload.product);
 
-      if(index !== -1) {
+      if (index !== -1) {
         cartItems[index].count += action.payload.count;
         return;
       }
 
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload.product ]
+        cartItems: [...state.cartItems, action.payload.product],
       };
     },
     removeProduct(state, action: PayloadAction<ProductStoreType>) {
@@ -54,7 +53,7 @@ const cartSlice = createSlice({
       state.cartItems[indexItem].count = action.payload.count;
     },
   },
-})
+});
 
-export const { addProduct, removeProduct, setCount } = cartSlice.actions
-export default cartSlice.reducer
+export const { addProduct, removeProduct, setCount } = cartSlice.actions;
+export default cartSlice.reducer;
