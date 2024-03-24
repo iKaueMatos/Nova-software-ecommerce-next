@@ -1,0 +1,134 @@
+.footer {
+  padding-top: 60px;
+  margin-top: 10px;
+  background-color: #000;
+
+  @include breakpoint(phone) {
+    padding-top: 90px;
+  }
+
+  .footer__top {
+    @include breakpoint(phone) {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 60px;
+    }
+
+    @include breakpoint(tablet-lg) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .footer__description {
+    margin-right: auto;
+    margin-bottom: 70px;
+
+    @include breakpoint(phone) {
+      width: 400px;
+      margin-bottom: 50px;
+    }
+
+    @include breakpoint(tablet-lg) {
+      margin-bottom: 0;
+    }
+
+    h6 {
+      display: flex;
+      color: #fff;
+      font-weight: 300;
+      align-items: center;
+      margin-bottom: 33px;
+
+      span {
+        font-weight: 400;
+        color: var(--color-orange);
+      }
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 190%;
+    }
+  }
+
+  .footer__social-networks {
+    display: flex;
+    margin-top: 20px;
+
+    li {
+      font-size: 21px;
+      margin-right: 25px;
+    }
+  }
+
+  .footer__links {
+    @include breakpoint(phone) {
+      display: flex;
+      width: 100%;
+    }
+
+    @include breakpoint(tablet-lg) {
+      width: auto;
+    }
+
+    ul {
+      margin-bottom: 40px;
+
+      @include breakpoint(phone) {
+        margin-right: 50px;
+        margin-bottom: 0;
+      }
+
+      @include breakpoint(tablet-lg) {
+        margin-right: 99px;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      li {
+        font-size: 14px;
+        color: #fff;
+        margin-bottom: 12px;
+
+        @include breakpoint(phone) {
+          margin-bottom: 15px;
+        }
+
+        &:first-child {
+          font-weight: 600;
+          margin-bottom: 26px;
+
+          @include breakpoint(phone) {
+            margin-bottom: 34px;
+          }
+        }
+
+        a {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .footer__bottom {
+    padding: 20px 0;
+    border-top: 1px solid #000000;
+
+    @include breakpoint(phone) {
+      padding: 33px 0;
+    }
+
+    .container {
+      font-size: 11px;
+      text-align: center;
+
+      @include breakpoint(phone) {
+        font-size: 16px;
+      }
+    }
+  }
+}
