@@ -3,7 +3,7 @@ import CheckoutStatus from '../../components/checkout-status';
 import Item from './item';
 import { RootState } from 'store';
 
-const ShoppingCart = () => {
+export function ShoppingCart() {
   const { cartItems } = useSelector((state: RootState) => state.cart);
 
   const priceTotal = () => {
@@ -70,6 +70,3 @@ const ShoppingCart = () => {
     </section>
   )
 };
-
-
-export default ShoppingCart

@@ -1,7 +1,7 @@
 import ProductsCarousel from './carousel';
 import useSwr from 'swr';
 
-const ProductsFeatured = () => {
+export default function ProductsFeatured() {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data } = useSwr('/api/products', fetcher);
 
@@ -18,5 +18,3 @@ const ProductsFeatured = () => {
     </section>
   )
 };
-
-export default ProductsFeatured

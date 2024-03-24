@@ -1,60 +1,92 @@
-import Layout from '../layouts/Main';
-import Link from 'next/link';
+import Layout from "../layouts/app/Main";
+import Link from "next/link";
 
-const RegisterPage = () => (
-  <Layout>
-    <section className="form-page">
-      <div className="container">
-        <div className="back-button-section">
-          <Link href="/products">
-            <a><i className="icon-left"></i> Voltar para a loja</a>
-          </Link>
-        </div>
+export default function RegisterPage() {
+  return (
+    <Layout>
+      <section className="form-page">
+        <div className="container">
+          <div className="back-button-section">
+            <Link href="/products">
+              <span>
+                <i className="icon-left"></i>Voltar para a página principal
+              </span>
+            </Link>
+          </div>
 
-        <div className="form-block">
-          <h2 className="form-block__title">Crie uma conta e descubra os benefícios</h2>
-          <p className="form-block__description">Lorem Ipsum é simplesmente um texto fictício da indústria de impressão e composição de texto. O Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500</p>
-
-          <form className="form">
-            <div className="form__input-row">
-              <input className="form__input" placeholder="Nome" type="text" />
-            </div>
-
-            <div className="form__input-row">
-              <input className="form__input" placeholder="Sobrenome" type="text" />
-            </div>
-
-            <div className="form__input-row">
-              <input className="form__input" placeholder="E-mail" type="text" />
-            </div>
-
-            <div className="form__input-row">
-              <input className="form__input" type="Password" placeholder="Senha" />
-            </div>
-
-            <div className="form__info">
-              <div className="checkbox-wrapper">
-                <label htmlFor="check-signed-in" className={`checkbox checkbox--sm`}>
-                  <input name="signed-in" type="checkbox" id="check-signed-in" />
-                  <span className="checkbox__check"></span>
-                  <p>Eu concordo com os Termos de Serviço e a Política de Privacidade do Google</p>
-                </label>
-              </div>
-            </div>
-
-            <button type="button" className="btn btn--rounded btn--yellow btn-submit">Cadastrar-se</button>
-
-            <p className="form__signup-link">
-              <Link href="/login">
-                <a href="#">Já é membro?</a>
-              </Link>
+          <div className="form-block">
+            <h2 className="form-block__title">
+              Crie uma conta e descubra os benefícios
+            </h2>
+            <p className="form-block__description">
+              Lorem Ipsum é simplesmente um texto fictício da indústria de
+              impressão e composição de texto. O Lorem Ipsum tem sido o texto
+              fictício padrão da indústria desde os anos 1500
             </p>
-          </form>
+
+            <form className="form">
+              <div className="form__input-row">
+                <input className="form__input" placeholder="Nome" type="text" />
+              </div>
+
+              <div className="form__input-row">
+                <input
+                  className="form__input"
+                  placeholder="Sobrenome"
+                  type="text"
+                />
+              </div>
+
+              <div className="form__input-row">
+                <input
+                  className="form__input"
+                  placeholder="E-mail"
+                  type="text"
+                />
+              </div>
+
+              <div className="form__input-row">
+                <input
+                  className="form__input"
+                  type="Password"
+                  placeholder="Senha"
+                />
+              </div>
+
+              <div className="form__info">
+                <div className="checkbox-wrapper">
+                  <label
+                    htmlFor="check-signed-in"
+                    className={`checkbox checkbox--sm`}
+                  >
+                    <input
+                      name="signed-in"
+                      type="checkbox"
+                      id="check-signed-in"
+                    />
+                    <span className="checkbox__check"></span>
+                    <p>
+                      Eu concordo com os Termos de Serviço e a Política de
+                      Privacidade do Google
+                    </p>
+                  </label>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                className="btn btn--rounded btn--yellow btn-submit"
+              >
+                Cadastrar-se
+              </button>
+
+              <p className="form__signup-link">
+                <Link href="/login">Já é membro?</Link>
+              </p>
+            </form>
+          </div>
         </div>
-
-      </div>
-    </section>
-  </Layout>
-)
-
-export default RegisterPage
+      </section>
+    </Layout>
+  );
+}

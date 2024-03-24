@@ -2,7 +2,7 @@ type GalleryProductType = {
   images: string[]
 }
 
-const Gallery = ({ images }: GalleryProductType) => {
+export default function Gallery({ images }: GalleryProductType) {
   const featImage = images[0];
 
   return (
@@ -21,6 +21,3 @@ const Gallery = ({ images }: GalleryProductType) => {
     </section>
   );
 };
-  
-export default Gallery;
-  

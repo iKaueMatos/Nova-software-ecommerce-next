@@ -2,7 +2,7 @@ type CheckoutStatusProps = {
   step: string;
 };
 
-const CheckoutStatus = ({ step }: CheckoutStatusProps) => {
+export default function CheckoutStatus({ step }: CheckoutStatusProps) {
   return (
     <div className="checkout-status">
       <ul className="checkout-steps">
@@ -16,5 +16,3 @@ const CheckoutStatus = ({ step }: CheckoutStatusProps) => {
     </div>
   );
 };
-
-export default CheckoutStatus;

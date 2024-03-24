@@ -1,15 +1,14 @@
 import { GetServerSideProps } from 'next'
 
 import { useState } from 'react';
-import Footer from '../../components/footer';
-import Layout from '../../layouts/Main';
-import Breadcrumb from '../../components/breadcrumb';
+import Layout from '../../layouts/app/Main';
+import Breadcrumb  from '../../components/breadcrumb';
 import ProductsFeatured from '../../components/products-featured';
 import Gallery from '../../components/product-single/gallery';
-import Content from '../../components/product-single/content';
+import { Content } from '../../components/product-single/content';
 import Description from '../../components/product-single/description';
 import Reviews from '../../components/product-single/reviews';
-import { server } from '../../utils/server'; 
+import { server } from '../../utils/server';
 
 // types
 import { ProductType } from 'types';
@@ -30,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   }
 }
 
-const Product = ({ product }: ProductPageType) => {
+export default function Product({ product }: ProductPageType) {
   const [showBlock, setShowBlock] = useState('description');
 
   return (
@@ -59,9 +58,6 @@ const Product = ({ product }: ProductPageType) => {
       <div className="product-single-page">
         <ProductsFeatured />
       </div>
-      <Footer />
     </Layout>
   );
 }
-
-export default Product

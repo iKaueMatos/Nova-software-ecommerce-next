@@ -10,7 +10,7 @@ type HeaderType = {
   isErrorPage?: Boolean;
 }
 
-const Header = ({ isErrorPage }: HeaderType) => {
+export default function Header({ isErrorPage }: HeaderType) {
   const router = useRouter();
   const { cartItems } = useSelector((state: RootState) => state.cart);
   const arrayPaths = ['/'];
@@ -96,6 +96,3 @@ const Header = ({ isErrorPage }: HeaderType) => {
     </header>
   )
 };
-
-
-export default Header;

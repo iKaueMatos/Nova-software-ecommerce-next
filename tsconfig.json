@@ -56,5 +56,5 @@
   "exclude": [],
   "include": [
     "pages"
-  ]
+, "services/api"  ]
 }

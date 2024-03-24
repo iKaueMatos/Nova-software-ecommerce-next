@@ -1,7 +1,7 @@
 import Rater from 'react-rater';
 import { PunctuationType } from 'types';
 
-const Punctuation = ({ votes, punctuation, countOpinions }: PunctuationType) => {
+export default function Punctuation({ votes, punctuation, countOpinions }: PunctuationType) {
   const percentageBar = (count: number) => {
     return (count * 100) / countOpinions;
   }
@@ -34,5 +34,3 @@ const Punctuation = ({ votes, punctuation, countOpinions }: PunctuationType) => 
     </section>
   );
 };
-
-export default Punctuation;

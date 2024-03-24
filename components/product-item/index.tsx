@@ -5,7 +5,7 @@ import { toggleFavProduct } from 'store/reducers/user';
 import { RootState } from 'store';
 import { ProductTypeList } from 'types';
 
-const ProductItem = ({ discount, images, id, name, price, currentPrice }: ProductTypeList) => {
+export default function ProductItem({ discount, images, id, name, price, currentPrice }: ProductTypeList) {
   const dispatch = useDispatch();
   const { favProducts } = useSelector((state: RootState) => state.user);
 
@@ -13,7 +13,7 @@ const ProductItem = ({ discount, images, id, name, price, currentPrice }: Produc
 
   const toggleFav = () => {
     dispatch(toggleFavProduct(
-      { 
+      {
         id,
       }
     ))
@@ -27,26 +27,23 @@ const ProductItem = ({ discount, images, id, name, price, currentPrice }: Produc
         <Link href={`/product/${id}`}>
           <a>
             <img src={images ? images[0] : ''} alt="product" />
-            {discount && 
+            {discount &&
               <span className="product__discount">{discount}%</span>
             }
           </a>
         </Link>
       </div>
-      
+
       <div className="product__description">
         <h3>{name}</h3>
         <div className={"product__price " + (discount ? 'product__price--discount' : '')} >
-          <h4>R${ currentPrice }</h4>
+          <h4>R${currentPrice}</h4>
 
-          {discount &&  
-            <span>${ price }</span>
+          {discount &&
+            <span>${price}</span>
           }
         </div>
       </div>
     </div>
   )
 };
-
-
-export default ProductItem

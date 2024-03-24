@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from 'components/header';
 import { useRouter } from 'next/router';
+import Footer from 'components/footer';
 
 type LayoutType = {
   title?: string;
@@ -16,12 +17,11 @@ export default ({ children, title = 'Pagina não encontrada' }: LayoutType) => {
       <Head>
         <title>Página não encontrada &mdash; {title}</title>
       </Head>
-
       <Header isErrorPage />
-
       <main className={(pathname !== '/' ? 'main-page' : '')}>
         {children}
       </main>
+      <Footer />
     </div>
   )
 }

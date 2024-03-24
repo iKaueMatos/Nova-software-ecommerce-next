@@ -1,6 +1,9 @@
 import Head from 'next/head';
-import Header from 'components/header';
+
 import { useRouter } from 'next/router';
+import React from 'react';
+import Header from '../../components/header/index';
+import Footer from '../../components/footer/index';
 
 type LayoutType = {
   title?: string;
@@ -14,14 +17,13 @@ export default ({ children, title = 'Nova Software ecommerce' }: LayoutType) => 
   return (
     <div className="app-main">
       <Head>
-        <title>{ title }</title>
+        <title>{title}</title>
       </Head>
-
       <Header />
-
       <main className={(pathname !== '/' ? 'main-page' : '')}>
-        { children }
+        {children}
       </main>
+      <Footer />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import Logo from "assets/icons/logo";
 
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
@@ -55,5 +55,3 @@ const Footer = () => {
     </footer>
   )
 };
-
-export default Footer

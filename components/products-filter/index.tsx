@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Checkbox from './form-builder/checkbox';
-import CheckboxColor from './form-builder/checkbox-color';
+import { CheckboxColor } from './form-builder/checkbox-color';
 import Slider from 'rc-slider';
 
 // data
@@ -11,7 +11,7 @@ import productsSizes from './../../utils/data/products-sizes';
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
 
-const ProductsFilter = () => {
+export function ProductsFilter() {
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const addQueryParams = () => {
@@ -76,5 +76,3 @@ const ProductsFilter = () => {
     </form>
   )
 }
-
-export default ProductsFilter

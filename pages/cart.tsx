@@ -1,11 +1,10 @@
-import Layout from '../layouts/Main';
-import ShoppingCart from '../components/shopping-cart';
+import Layout from '../layouts/app/Main';
+import { ShoppingCart } from '../components/shopping-cart';
 
-const Products = () => (
-  <Layout>
-    <ShoppingCart />
-  </Layout>
-)
-  
-export default Products
-  
+export default function Products() {
+  return (
+    <Layout>
+      <ShoppingCart />
+    </Layout>
+  )
+}

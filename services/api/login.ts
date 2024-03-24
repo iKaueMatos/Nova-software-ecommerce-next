@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// fake login
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const request = req.body;
   const email = request.email;

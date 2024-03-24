@@ -3,7 +3,7 @@ import SwiperCore, { EffectFade, Navigation } from 'swiper';
 
 SwiperCore.use([EffectFade, Navigation]);
 
-const PageIntro = () => {
+export default function PageIntro() {
 
   return (
     <section className="page-intro">
@@ -63,5 +63,3 @@ const PageIntro = () => {
     </section>
   )
 };
-
-export default PageIntro

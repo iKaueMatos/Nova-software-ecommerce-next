@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import List from './list';
 
-const ProductsContent = () => {
+export default function ProductsContent() {
   const [orderProductsOpen, setOrderProductsOpen] = useState(false);
 
   return (
@@ -33,5 +33,3 @@ const ProductsContent = () => {
     </section>
   );
 };
-
-export default ProductsContent

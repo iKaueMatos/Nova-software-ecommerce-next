@@ -1,4 +1,4 @@
-import Layout from '../layouts/Main';
+import Layout from '../layouts/app/Main';
 import Link from 'next/link';
 import { useForm } from "react-hook-form";
 import { server } from '../utils/server';
@@ -9,7 +9,7 @@ type LoginMail = {
   password: string;
 }
 
-const LoginPage = () => {
+export default function LoginPage() {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data: LoginMail) => {
@@ -17,8 +17,6 @@ const LoginPage = () => {
       email: data.email,
       password: data.password
     });
-
-    console.log(res);
   };
 
   return (
@@ -27,7 +25,7 @@ const LoginPage = () => {
         <div className="container">
           <div className="back-button-section">
             <Link href="/products">
-              <a><i className="icon-left"></i> Voltar para a loja</a>
+              <span><i className="icon-left"></i> Voltar para a loja</span>
             </Link>
           </div>
 
@@ -102,5 +100,3 @@ const LoginPage = () => {
     </Layout>
   )
 }
-
-export default LoginPage
