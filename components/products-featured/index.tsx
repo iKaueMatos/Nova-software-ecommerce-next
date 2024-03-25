@@ -3,7 +3,7 @@ import useSwr from 'swr';
 
 export default function ProductsFeatured() {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data } = useSwr('/api/products', fetcher);
+  const { data } = useSwr('/services/api/products', fetcher);
 
   return (
     <section className="section section-products-featured">
