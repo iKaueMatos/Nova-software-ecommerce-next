@@ -1,6 +1,7 @@
 import ReviewsList from './reviews-list';
 import Punctuation from './punctuation';
-import { ProductType } from 'types';
+import { ProductType } from '../../../../@types';
+import React from 'react';
 
 type ReviewsProductType = {
   show: boolean;

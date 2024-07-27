@@ -54,7 +54,7 @@ export function ShoppingCart() {
           }
 
           {cartItems.length === 0 &&
-            <p>Nothing in the cart</p>
+            <p>Carrinho vazio</p>
           }
         </div>
 

@@ -1,8 +1,9 @@
-import Layout from "../templates/Home/Main";
+import Layout from "../templates/Home/Main"
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { server } from "../shared/server";
 import { postData } from "../shared/services";
+import React from "react";
 
 type LoginMail = {
   email: string;
@@ -10,7 +11,6 @@ type LoginMail = {
 };
 
 export default function LoginPage() {
-  const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data: LoginMail) => {
     const res = await postData(`${server}/api/login`, {
@@ -39,31 +39,14 @@ export default function LoginPage() {
               fictício padrão da indústria desde os anos 1500
             </p>
 
-            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+            <form className="form">
               <div className="form__input-row">
                 <input
                   className="form__input"
                   placeholder="E-mail"
                   type="text"
                   name="email"
-                  ref={register({
-                    required: true,
-                    pattern:
-                      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  })}
                 />
-
-                {errors.email && errors.email.type === "required" && (
-                  <p className="message message--error">
-                    Este campo é obrigatório
-                  </p>
-                )}
-
-                {errors.email && errors.email.type === "pattern" && (
-                  <p className="message message--error">
-                    Por favor, insira um e-mail válido
-                  </p>
-                )}
               </div>
 
               <div className="form__input-row">
@@ -72,13 +55,7 @@ export default function LoginPage() {
                   type="password"
                   placeholder="Senha"
                   name="password"
-                  ref={register({ required: true })}
                 />
-                {errors.password && errors.password.type === "required" && (
-                  <p className="message message--error">
-                    Este campo é obrigatório
-                  </p>
-                )}
               </div>
 
               <div className="form__info">
@@ -91,7 +68,6 @@ export default function LoginPage() {
                       type="checkbox"
                       name="keepSigned"
                       id="check-signed-in"
-                      ref={register({ required: false })}
                     />
                     <span className="checkbox__check"></span>
                     <p>Manter-me conectado</p>

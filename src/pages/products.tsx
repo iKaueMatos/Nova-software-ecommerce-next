@@ -1,7 +1,8 @@
-import Layout from "./__layouts/app/Main";
 import Breadcrumb from "../components/breadcrumb";
 import { ProductsFilter } from "../components/_ui/products-filter";
 import ProductsContent from "../components/_ui/products-content";
+import Layout from "../templates/Home/Main"
+import React from "react";
 
 export default function Products() {
   return (

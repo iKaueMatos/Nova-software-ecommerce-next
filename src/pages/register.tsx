@@ -1,4 +1,5 @@
-import Layout from './__layouts/app/Main';
+import React from 'react';
+import Layout from "../templates/Home/Main"
 import Link from "next/link";
 
 export default function RegisterPage() {

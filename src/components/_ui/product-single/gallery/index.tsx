@@ -1,3 +1,5 @@
+import React from "react";
+
 type GalleryProductType = {
   images: string[]
 }

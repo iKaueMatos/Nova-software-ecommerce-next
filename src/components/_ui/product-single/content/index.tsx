@@ -3,7 +3,7 @@ import { CheckboxColor } from "./../../products-filter/form-builder/checkbox-col
 import { useDispatch, useSelector } from "react-redux";
 import { some } from "lodash";
 
-import { ProductType, ProductStoreType } from "types";
+import { ProductType, ProductStoreType } from "../../../../@types";
 import React from "react";
 import { RootState } from "../../../../context/store";
 import { toggleFavProduct } from "../../../../context/store/reducers/user";
@@ -92,12 +92,12 @@ export function Content({ product }: ProductContent) {
         </div>
         <div className="product-filter-item">
           <h5>
-            Size: <strong>See size table</strong>
+            Tamanhos: <strong>Tabela de tamanho</strong>
           </h5>
           <div className="checkbox-color-wrapper">
             <div className="select-wrapper">
               <select onChange={onSelectChange}>
-                <option>Choose size</option>
+                <option>Tamanhos</option>
                 {productsSizes.map((type) => (
                   <option value={type.label}>{type.label}</option>
                 ))}

@@ -7,8 +7,7 @@ import type { AppProps } from "next/app";
 import "swiper/css";
 import "rc-slider/assets/index.css";
 import "react-rater/lib/react-rater.css";
-import "../assets/css/styles.scss";
-
+import "../../assets/css/styles.scss"
 import * as gtag from "../shared/gtag";
 
 const isProduction = process.env.NODE_ENV === "production";

@@ -1,5 +1,6 @@
-import Layout from './__layouts/app/Main';
+import Layout from "../templates/Home/Main"
 import { ShoppingCart } from '../components/shopping-cart';
+import React from "react";
 
 export default function Products() {
   return (

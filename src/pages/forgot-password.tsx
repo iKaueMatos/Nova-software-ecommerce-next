@@ -1,16 +1,15 @@
-import Layout from "./__layouts/app/Main";
+import Layout from "../templates/Home/Main"
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { server } from "../shared/server";
 import { postData } from "../shared/services";
+import React from "react";
 
 type ForgotMail = {
   email: string;
 };
 
 export default function ForgotPassword() {
-  const { register, handleSubmit, errors } = useForm();
-
   const onSubmit = async (data: ForgotMail) => {
     const res = await postData(`${server}/api/login`, {
       email: data.email,
@@ -38,31 +37,14 @@ export default function ForgotPassword() {
               Digite seu e-mail ou número de telefone para recuperar sua conta
             </p>
 
-            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+            <form className="form">
               <div className="form__input-row">
                 <input
                   className="form__input"
                   placeholder="e-mail"
                   type="text"
                   name="email"
-                  ref={register({
-                    required: true,
-                    pattern:
-                      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  })}
-                />
-
-                {errors.email && errors.email.type === "required" && (
-                  <p className="message message--error">
-                    Este campo é obrigatório
-                  </p>
-                )}
-
-                {errors.email && errors.email.type === "pattern" && (
-                  <p className="message message--error">
-                    Por favor, escreva um e-mail válido
-                  </p>
-                )}
+                  ></input>
               </div>
 
               <div className="form__input-row">
@@ -71,13 +53,7 @@ export default function ForgotPassword() {
                   type="password"
                   placeholder="Senha"
                   name="password"
-                  ref={register({ required: true })}
                 />
-                {errors.password && errors.password.type === "required" && (
-                  <p className="message message--error">
-                    Este campo é obrigatório
-                  </p>
-                )}
               </div>
 
               <button

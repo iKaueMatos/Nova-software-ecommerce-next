@@ -1,6 +1,7 @@
+import React from "react";
 import { useDispatch } from "react-redux";
-import { removeProduct, setCount } from "src/store/reducers/cart";
-import { ProductStoreType } from "types";
+import { ProductStoreType } from "../../../@types";
+import { removeProduct, setCount } from "../../../context/store/reducers/cart";
 
 export default function ShoppingCart({
   thumb,
